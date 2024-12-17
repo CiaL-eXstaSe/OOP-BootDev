@@ -26,14 +26,21 @@ returns its DPS using the same logic as the lines above.
 Then, replace the two lines above with calls to get_soldier_dps.
 """
 
+# Function to simulate a fight between two soldiers based on their DPS
 def fight_soldiers(soldier_one, soldier_two):
+    # Calculate DPS for both soldiers using the helper function
     soldier_one_dps = get_soldier_dps(soldier_one)
     soldier_two_dps = get_soldier_dps(soldier_two)
+    
+    # Compare DPS to determine the winner
     if soldier_one_dps > soldier_two_dps:
         return "soldier 1 wins"
     if soldier_two_dps > soldier_one_dps:
         return "soldier 2 wins"
+    # If DPS is equal, both soldiers die
     return "both soldiers die"
 
+# Helper function to calculate a soldier's damage per second (DPS)
 def get_soldier_dps(soldier):
+    # Multiply damage by attacks per second to get total DPS
     return soldier["damage"] * soldier["attacks_per_second"]

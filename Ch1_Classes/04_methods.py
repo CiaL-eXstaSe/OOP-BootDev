@@ -38,13 +38,20 @@ Add a fortify() method to your wall class.
 It should double the current armor property.
 """
 
+# Define a Wall class with properties and a method to strengthen it
 class Wall:
-    armor = 10
-    height = 5
+    # Initial properties
+    armor = 10    # Base armor value
+    height = 5    # Base height value
 
+    # Method to strengthen the wall by doubling its armor
     def fortify(self):
+        # Multiply the current armor by 2
         self.armor *= 2
 
+# Create a wall instance and test the fortify method
 wall = Wall()
+# Call the fortify method to double the wall's armor
 wall.fortify()
+# Print the new armor value (should be 20)
 print(wall.armor)

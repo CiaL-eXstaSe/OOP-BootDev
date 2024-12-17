@@ -24,8 +24,12 @@ and rename the function accordingly.
 Additionally, try to rename the variables inside the function to be more descriptive. 
 After passing the tests, take a look at the solution to see how we named everything.
 """
+# Function to process multiple walls and remove destroyed ones
 def destroy_walls(wall_healths):
+    # Iterate through each wall's health in the list
     for wall_health in wall_healths:
+        # If wall health is 0 or negative, remove it from the list
         if wall_health <= 0:
             wall_healths.remove(wall_health)
+    # Return the updated list of walls (only walls that are still standing)
     return wall_healths

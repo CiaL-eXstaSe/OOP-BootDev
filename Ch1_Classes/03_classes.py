@@ -45,10 +45,14 @@ Assignment
 Create a class called Wall on line 1. It should have a property called armor that is initialized to 10 and a height that starts at 5.
 """
 
+# Define a Wall class with initial armor and height properties
 class Wall:
-    armor = 10
-    height = 5
+    # Class properties with default values
+    armor = 10    # Initial armor value
+    height = 5    # Initial height value
 
+# Create an instance of the Wall class
 wall = Wall()
+# Print the wall's properties to verify initialization
 print(wall.armor)
 print(wall.height)
