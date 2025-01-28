@@ -4,8 +4,10 @@
 - Understanding the fundamentals of Object-Oriented Programming
 - Learning the importance of clean code and naming conventions
 - Implementing DRY (Don't Repeat Yourself) principles
-- Creating basic Python classes
-- Working with class properties and methods
+- Creating and working with Python classes
+- Understanding methods, constructors, and object instances
+- Managing object state and behavior
+- Working with multiple objects and their interactions
 
 ## Notes
 - OOP is a pattern for writing clean and maintainable code
@@ -14,6 +16,10 @@
 - Classes are custom types that can store properties and methods
 - Methods are functions tied to a class with access to its properties
 - The `self` parameter in methods refers to the instance of the class
+- Constructors (`__init__`) initialize object properties
+- Objects are instances of classes with unique states
+- Methods can modify object state and return values
+- Exception handling is important for robust class design
 
 ## Challenges Completed
 - [x] Challenge 1: What is Object-Oriented Programming
@@ -32,3 +38,24 @@
   - Added methods to classes
   - Used the self parameter
   - Implemented state-changing methods
+- [x] Challenge 5: Methods Return Values
+  - Implemented methods that return values
+  - Calculated wall costs based on properties
+  - Combined property access with calculations
+- [x] Challenge 6: Methods vs Functions
+  - Understood differences between methods and functions
+  - Learned about implicit self parameter
+  - Explored method parameter passing
+- [x] Challenge 7: Constructors
+  - Implemented class constructors
+  - Initialized object properties
+  - Computed derived properties
+- [x] Challenge 8: Multiple Objects
+  - Created multiple class instances
+  - Managed different object states
+  - Implemented object interactions
+- [x] Challenge 9: Archers
+  - Built complex class with multiple methods
+  - Implemented state management
+  - Added exception handling
+  - Created object interaction methods
