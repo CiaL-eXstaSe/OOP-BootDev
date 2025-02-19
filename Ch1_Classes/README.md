@@ -20,6 +20,10 @@
 - Objects are instances of classes with unique states
 - Methods can modify object state and return values
 - Exception handling is important for robust class design
+- Class variables are shared across all instances of a class
+- Instance variables are unique to each object instance
+- It's generally better to use instance variables over class variables
+- Different programming languages use different terms for these concepts
 
 ## Challenges Completed
 - [x] Challenge 1: What is Object-Oriented Programming
@@ -59,3 +63,15 @@
   - Implemented state management
   - Added exception handling
   - Created object interaction methods
+- [x] Challenge 10: Class Variables vs Instance Variables
+  - Learned difference between class and instance variables
+  - Understood static variable concepts
+  - Fixed bugs by converting class variables to instance variables
+- [x] Challenge 11: Employee Management
+  - Implemented class variables for company-wide data
+  - Created employee tracking system
+  - Used instance variables for individual employee data
+- [x] Challenge 12: Wizard Library
+  - Built multi-class system (Book and Library classes)
+  - Implemented collection management methods
+  - Created case-insensitive search functionality
