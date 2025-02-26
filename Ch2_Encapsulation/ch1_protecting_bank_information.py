@@ -44,24 +44,34 @@ Withdraw Method:
 """
 
 class BankAccount:
+    # Constructor initializes a new bank account with an account number and starting balance
+    # Double underscore creates private attributes for data protection
     def __init__(self, account_number, initial_balance):
-        self.__account_number = account_number
-        self.__balance = initial_balance
+        self.__account_number = account_number  # Private attribute to prevent direct modification
+        self.__balance = initial_balance       # Private attribute to protect balance from tampering
 
+    # Getter method to safely access the private account number
+    # Provides read-only access to the account number
     def get_account_number(self):
         return self.__account_number
 
+    # Getter method to safely access the private balance
+    # Allows checking balance without exposing the private attribute
     def get_balance(self):
         return self.__balance
 
+    # Method to add funds to the account
+    # Validates input to ensure banking rules are followed
     def deposit(self, amount):
         if amount <= 0:
-            raise ValueError("cannot deposit zero or negative funds")
-        self.__balance += amount
+            raise ValueError("cannot deposit zero or negative funds")  # Ensures valid deposit amount
+        self.__balance += amount  # Updates balance only if amount is valid
 
+    # Method to remove funds from the account
+    # Includes multiple validations to ensure safe transactions
     def withdraw(self, amount):
         if amount <= 0:
-            raise ValueError("cannot withdraw zero or negative funds")
+            raise ValueError("cannot withdraw zero or negative funds")  # Ensures valid withdrawal amount
         if amount > self.__balance:
-            raise ValueError("insufficient funds")
-        self.__balance -= amount
+            raise ValueError("insufficient funds")  # Prevents overdrawing the account
+        self.__balance -= amount  # Updates balance only if all validations pass
