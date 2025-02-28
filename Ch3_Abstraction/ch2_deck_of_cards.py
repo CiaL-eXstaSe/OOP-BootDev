@@ -83,7 +83,18 @@ class DeckOfCards:
         # Remove and return the last card from the deck (top of the deck)
         # If deck is empty (no cards left), return None
         # Using pop() without an index removes the last element
-        return self.__cards.pop() if self.__cards else None
+
+        # Author's solution: More explicit and easier to read
+        # Clearly shows the empty deck check
+        # Better for educational purposes and code clarity
+        if len(self.__cards) == 0:
+            return None
+        return self.__cards.pop()
+        
+        # Alternative solution using ternary operator:
+        # return self.__cards.pop() if self.__cards else None
+        # Benefits: More concise, uses Python's idiomatic truthiness
+        # Common in production code where brevity is valued
 
     # don't touch below this line
 
