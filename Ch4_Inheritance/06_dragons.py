@@ -63,17 +63,14 @@ def main():
 
     # don't touch above this line
 
-    # First describe all dragons to establish initial battlefield state
-    # before simulating combat
+    # First describe all dragons to establish initial battlefield state before simulating combat
     for dragon in dragons:
         describe(dragon)
 
     # Simulate each dragon's attack while ensuring they don't target themselves
-    # Using enumerate gives us both the dragon and its index for easy removal
-    # from the target list
+    # Using enumerate gives us both the dragon and its index for easy removal from the target list
     for i, dragon in enumerate(dragons):
-        # Create a new list for each dragon to prevent modifying the original
-        # dragons list while iterating
+        # Create a new list for each dragon to prevent modifying the original dragons list while iterating
         other_dragons = dragons.copy()
         del other_dragons[i]
         dragon.breathe_fire(3, 3, other_dragons)
