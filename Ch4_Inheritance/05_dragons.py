@@ -47,6 +47,7 @@ the blast. Return the list of units hit by the blast.
 Example of Fire Breath Hitting a Unit
 ---------------
 The example above uses a __fire_range of 1 centered at (1, 1).
+
 """
 
 class Unit:
@@ -78,3 +79,67 @@ class Dragon(Unit):
             if unit.in_area(x - self.__fire_range, y - self.__fire_range, x + self.__fire_range, y + self.__fire_range):
                 hit_units.append(unit)
         return hit_units
+    
+    
+"""
+Alternative Solution:
+
+class Unit:
+    def __init__(self, name, pos_x, pos_y):
+        self.name = name
+        self.pos_x = pos_x
+        self.pos_y = pos_y
+
+    def in_area(self, x_1, y_1, x_2, y_2):
+        return (
+            self.pos_x >= x_1
+            and self.pos_x <= x_2
+            and self.pos_y >= y_1
+            and self.pos_y <= y_2
+        )
+
+
+class Dragon(Unit):
+    def __init__(self, name, pos_x, pos_y, fire_range):
+        super().__init__(name, pos_x, pos_y)
+        self.__fire_range = fire_range
+
+    def breathe_fire(self, x, y, units):
+        hit_by_blast = []
+        for unit in units:
+            in_area = unit.in_area(
+                x - self.__fire_range,
+                y - self.__fire_range,
+                x + self.__fire_range,
+                y + self.__fire_range,
+            )
+            if in_area:
+                hit_by_blast.append(unit)
+        return hit_by_blast
+
+Key Differences and Benefits:
+
+1. in_area method formatting:
+   - Breaks down logical conditions into separate lines for better readability
+   - Uses explicit 'and' operators instead of Python's chained comparisons
+   - Makes each condition more explicit and easier to understand
+   - More maintainable if additional conditions need to be added
+
+2. breathe_fire method differences:
+   - Uses more descriptive variable names (hit_by_blast vs hit_units)
+   - Stores the result of in_area check in a separate variable
+   - Splits logic into smaller, more digestible steps
+   - Easier to debug by inspecting the in_area variable
+
+While both solutions are functionally identical, the alternative solution follows 
+better software engineering practices with improved:
+- Readability through proper line breaks and explicit conditions
+- Maintainability
+- Descriptive variable naming
+- Debugging capabilities
+
+In professional settings, this more verbose but clearer style would typically be 
+preferred, as code is read much more often than it is written.
+"""
+    
+    
