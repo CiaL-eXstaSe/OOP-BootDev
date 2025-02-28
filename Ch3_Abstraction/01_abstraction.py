@@ -60,3 +60,30 @@ Complete these methods:
     move_down(): Subtracts the human's speed from its y position
     get_position(): Returns the x position and y position as a tuple
 """
+
+class Human:
+    # Constructor initializes a human with position and movement speed
+    # Using double underscore for true private variables to prevent direct access
+    def __init__(self, pos_x, pos_y, speed):
+        self.__pos_x = pos_x      # Private x-coordinate
+        self.__pos_y = pos_y      # Private y-coordinate
+        self.__speed = speed      # Private movement speed
+
+    # Movement methods abstract away the complexity of position management
+    # Each method updates the position by the speed value in the appropriate direction
+    def move_right(self):
+        self.__pos_x += self.__speed  # Increase x-coordinate to move right
+
+    def move_left(self):
+        self.__pos_x -= self.__speed  # Decrease x-coordinate to move left
+
+    def move_up(self):
+        self.__pos_y += self.__speed  # Increase y-coordinate to move up
+
+    def move_down(self):
+        self.__pos_y -= self.__speed  # Decrease y-coordinate to move down
+
+    # Getter method provides a clean interface to access position
+    # Returns a tuple to prevent direct modification of position values
+    def get_position(self):
+        return (self.__pos_x, self.__pos_y)
