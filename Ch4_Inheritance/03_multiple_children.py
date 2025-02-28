@@ -65,5 +65,3 @@ class Archer(Hero):
         # Reduce arrow count and deal damage to target
         self.__num_arrows -= 1
         target.take_damage(10)
-        # Return a message describing the action
-        return f"{target.get_name()} was shot by 1 arrow"
