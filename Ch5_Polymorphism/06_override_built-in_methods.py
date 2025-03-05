@@ -46,3 +46,10 @@ Dragons are egotistical creatures, let's give them a great format for announcing
     {1} is the color of the dragon.
 """
 
+class Dragon:
+    def __init__(self, name, color):
+        self.name = name
+        self.color = color
+
+    def __str__(self):
+        return f"I am {self.name}, the {self.color} dragon"
